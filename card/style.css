@@ -1,0 +1,123 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.header {
+    background-color: #3498db; 
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+    margin-top: 40px;
+    padding :15px;
+    border-radius: 5px;
+    width: 350px;
+    background-color: #f0f0f0;
+}
+  
+.card{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.card p {
+    font-weight: bold;
+}
+.button-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    margin: auto;
+}
+.button-container2 {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    margin: auto;
+}
+
+form {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 100%;
+}
+form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 85%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.payment-details {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+    margin-top: 40px;
+    padding :15px;
+    border-radius: 5px;
+    width: 350px;
+    background-color: #f0f0f0;
+}
+.payment-details button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto;
+    background-color: #3498db;
+    color: #fff;
+    font-weight: bold;
+}
+  
+.payment-option {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #3498db; 
+    color: #fff;
+    font-weight: bold;
+}
+.payButton:hover {
+    background-color: #2980b9; 
+}
+  
+.payment-option:hover {
+    background-color: #2980b9; 
+}
+#paymentForm button:hover {
+    background-color: #2980b9; 
+}
+
+#paymentForm label,
+#paymentForm input,
+#paymentForm button {
+    display: block;
+    margin-bottom: 10px;
+}
+#showPayButton {
+    display: none;
+}
+#payButton:disabled, #payButton:disabled:hover {
+    background-color: grey;
+    color: white;
+    cursor: not-allowed;
+}

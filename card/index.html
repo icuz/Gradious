@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Option</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>CARD</h1>
+        <h2>Choose Credit/Debit Buttons to show card details and available Balance</h2>
+    </div>
+  <div class="container">
+    <div class="card">
+      <h2>Your Card Details</h2>
+        <p>Card Number: <span id="cardNumber" style="font-weight: normal;">XXXX XXXX XXXX XXXX</span></p>
+        <p>Card Holder Name: <span id="cardHolderName" style="font-weight: normal;">XXXXXXXXXX</span></p>
+        <p>Card Balance: <span id="cardBalance" style="font-weight: normal;">XXXX.XX</span></p>
+    </div>
+  </div>
+  <div class="button-container">
+    <button class="payment-option" id="creditButton" onclick="changePaymentDetails('Credit')">Credit</button>
+    <button class="payment-option" id="debitButton" onclick="changePaymentDetails('Debit')">Debit</button>
+  </div>
+  <div class="button-container2">
+    <button class="payment-option" id="showPayButton" onclick="showPaymentForm()">Make Payment</button>
+  </div>
+  <div class="payment-details">
+    <form id="paymentForm">
+        <h2>-Select card to pay-</h2>
+      <label for="cardNumber">Recipient</label>
+      <input type="text" id="cardNumberInput" name="cardNumber" placeholder="- Card not selected -" required>
+      <label for="amount">Rupees</label>
+      <input type="number" id="amount" name="amount" placeholder="- Card not selected -" required>
+      <label for="pin">PIN</label>
+      <input type="text" id="pinInput" name="pin" placeholder="- Card not selected -" required>
+        <button type="submit" onclick="makePaymentAndDisplayDetails(event)" id="payButton" disabled>Pay</button>
+    </form>
+  </div>
+  <div>
+    <p>*Based on the button selection the payment is initialized.</p>
+  </div>
+</body>
+<script src="main.js"></script>
+</html>

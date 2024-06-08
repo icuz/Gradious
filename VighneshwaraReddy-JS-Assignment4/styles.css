@@ -1,0 +1,34 @@
+.student-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.student {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFF2CC;
+    padding: 10px;
+    font-family: Arial;
+}
+.student-headers {
+    background-color: #CFE2F3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-weight: bold;
+    font-family: Arial;
+}
+.student:nth-child(even) {
+    background-color: #D9EAD3;
+}
+
+.student > span {
+    text-align: center;
+    flex: 1;
+}
+.student-headers > span {
+    text-align: center;
+    flex: 0.5;
+}

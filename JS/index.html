@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Form</title>
+  <link rel="stylesheet" href="./css/basic.css">
+  <style>
+    
+    input[type="text"] {
+      width: 200px; 
+      resize: both; 
+      padding: 5px; 
+      box-sizing: border-box;
+      display: inline; 
+    }
+    .form-group1{
+      display: inline-block;
+      margin-top: 30px;
+      margin-bottom: 25px;
+      margin-right: 20px;
+    }
+    .form-group2{
+      display: inline-block;
+      margin-bottom: 20px;
+      margin-right: 20px;
+    }
+    .description{
+      font-size: 12px;
+      text-align: left;
+      color: #666;
+    }
+    .form-group-gender{
+      margin-bottom: 40px;
+    }
+    .form-group-city{
+      margin-bottom: 40px;
+      margin-right: 20px;
+    }
+    .form-group-city select{
+      width: 275px;
+      height: 30px;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+    .form-group-info{
+      display: inline-block;
+      margin-right: 20px;
+      margin-bottom: 40px;
+    }
+    .footer{
+      margin-top: 20px;
+    }
+    .form-group-interview{
+      margin-bottom: 40px;
+    }
+    .required::after{
+      content: " *";
+      color: red;
+      font-size: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Job Application Form</h1>
+    <p>Please Fill Out the Form Below to Submit Your Job Application!</p>
+    <hr>
+    <form action="">
+      <div class="form-group1">
+        <label class="required" for="first_name">Name</label>
+        <input type="text" name="first_name" id="first_name" style="width: 275px;" required>
+        <p class="description">First name</p>
+      </div>
+      <div class="form-group1">
+        <label for="last_name"></label>
+        <input type="text" name="last_name" id="last_name" style="width: 275px;" required>
+        <p class="description">Last name</p>
+      </div>
+      <div class="form-group2">
+        <label class="required" for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="ex: mymail@example.com" style="width: 255px;height: 10px;" required>
+        <p class="description">mymail@example.com</p>
+      </div>
+      <div class="form-group2">
+        <label class="required" for="phone">Phone Number</label>
+        <input type="tel" name="phone" id="phone" placeholder="000-000-0000" style="width: 250px;height: 10px;" required>
+        <p class="description" style="color: white; user-select: none;">hiddentext</p>
+      </div>
+      <div class="form-group-gender">
+        <label class="required">Gender</label>
+        <div>
+          <label for="male">
+            <input type="radio" id="male" name="gender" value="male">
+            Male
+          </label>
+        </div>
+        <div>
+          <label for="female">
+            <input type="radio" id="female" name="gender" value="female">
+            Female
+          </label>
+        </div>
+        <div>
+          <label for="transgender">
+            <input type="radio" id="transgender" name="gender" value="transgender">
+            Transgender
+          </label>
+        </div>
+      </div>
+      <div class="form-group-city">
+        <label for="city">Current City</label>
+        <select name="city" id="city" style="color: #666;">
+            <option value="">Please Select</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Bengaluru">Bengaluru</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Pune">Pune</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Lucknow">Lucknow</option>
+        </select>
+      </div>
+      <div class="form-group-info">
+        <label class="required" for="position">Applied Position</label>
+        <input type="text" name="position" id="position" placeholder="Enter the position you are applying for" style="width: 280px;height: 40px;" required>
+        <p class="description" style="color: white; user-select: none;">hiddentext</p>
+      </div>
+      <div class="form-group-info">
+        <label for="start_date">Earliest Possible Start Date</label>
+        <input type="date" name="start_date" id="start_date" style="width: 250px;height: 19px;color: #666;" required>
+        <p class="description" style="padding-left: 5px;">Date</p>
+      </div>
+      <div class="form-group">
+        <label for="interview_date" >Preferred Interview Date</label>
+        <input type="datetime-local" name="interview_date" id="interview_date" style="color: #666;" required>
+      </div>
+      <div class="form-group-resume">
+        <label class="required" for="resume">Upload Resume</label>
+        <button type="button" onclick="document.getElementById('resume').click()"></button>
+        <input type="file" name="resume" id="resume" required accept=".pdf,.doc,.docx" multiple style="display: none;">
+        <div></div>
+      </div>
+      <hr>
+      <div class="footer">
+        <button type="submit" id="apply" style="height: 40px;width: 120px;background-color:#727272 ;color: white;border-radius: 3px;border: none;margin-left: 250px;">Apply</button>
+      </div>
+    </form>
+  </div>
+</body>
+<script src="./js/main.js"></script>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vighnesh's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+        .hero {
+            display: flex;;
+        }
+        .name,.about, .projects, .contact {
+            float: right;
+            width: 90%;
+            height: 50vh;
+        }
+        .about{
+            overflow-y: scroll;
+        }
+        .name {
+            font-size: 40px;
+            font-weight: bold;
+            color: #333;
+            padding: 50px;
+        }
+        .left-div {
+            float: left;
+            width: 50%;
+        }
+        .left-div img {
+            width: 100%;
+            height: 100%;
+        }
+        .right-div {
+            float: right;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="home-button"><a href="#hero">Home</a></li>
+                <li class="about-button"><a href="#about">About Me</a></li>
+                <li class="projects-button"><a href="#projects">Projects</a></li>
+                <li class="contact-button"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="left-div">
+            <section">
+            <img src="https://www.realmenrealstyle.com/wp-content/uploads/2021/07/Suit-Jacket-Details.jpg" alt="Image of M.Vighenshwara Reddy">
+            </section>
+        </div>
+        <div class="right-div">
+            <section class="hero hidden">
+                <h2 class="name hidden">M.Vighneshwara Reddy</h2>
+        </section>
+        <section class="about hidden">
+            <h2>About Me</h2>
+            <p>Hello there! 👋 I'm M.Vighenshwara Reddy, I am always eager to embrace new technologies that push the boundaries of what's possible. Whether it's building user-friendly applications, optimizing backend processes, or collaborating on cross-functional teams.
+                
+                Outside the realm of coding, you'll find me exploring the latest tech trends, enjoying a good cup of coffee, and seeking inspiration from the ever-evolving world of software development. Let's connect and create something amazing together! 🚀</p>
+            <h2>SKILLS✍🏻</h2>
+            <p>Languages: C, C++,Python, Java.
+                Web Technologies: HTML, CSS, JavaScript.
+                Databases and Devtools: MySQL ,GIT/GitHub, Jupyter ,firebase.
+                Android Technologies: Flutter,Dart.
+            </p>
+            <h2>ACHIEVEMENTS🎖️</h2>
+            <h3>Freshmen Code Cup</h3>
+            <p>Co-organised Freshmen Code Cup competition which is a coding competition for the freshmen of the academic year 2022-2023.Many students from various institutes have participated
+                in this competition.
+            </p>
+            <h3>AZURA 2K23 Organizer</h3>
+            <p>Co-organised Azura 2k23 behalf of CSE Dept. which is a technical
+                and Non-technical event for the fresh- men of the academic year 2022-2023.Many students
+                from various institutes have participated in this event.
+            </p>
+            <h2>HOBBIES🎧🏋🏻‍♂️</h2>
+            <ul>
+                <li>Reading Books</li>
+                <li>Weight lifting</li>
+                <li>Listening to Music</li>
+                <li>Watching Movies</li>
+            </ul>
+        </section>
+        <section class="projects hidden">
+            <h2>Projects👨🏻‍💻</h2>
+            <ol>
+                <li><a href="https://github.com/icuz/Hacollab" target="_blank" style="color: black;">Hacollab</a></li>
+                    <p>->Dart, android Studio, firebase.</p>
+                    <p>An android application for showcasing projects and collaborating with people to help in projects</p>
+                <li><a href="https://github.com/icuz/text-rephraser-using-openai---API" target="_blank" style="color: black;">ClearScribe</a></li>
+                    <p>->Python, PyQt6, OpenAI api</p>
+                    <p>api based text rephrasing tool. used for fine tuning and rewriting the text</p>
+            </ol>
+        </section>
+        <section class="contact hidden">
+            <h2 style="font-size: 24px;"><b>Contact</b></h2>
+            <p style="font-size: 18px;">Get in touch with me!</p>
+            <ul>
+                <li><a href="mailto:vikrposr@gmail.com" style="font-size: 16px;">📧 Email</a></li>
+                <li><a href="https://www.linkedin.com/in/itsjustviggi/" style="font-size: 16px;">💼 LinkedIn</a></li>
+                <li><a href="https://github.com/icuz" style="font-size: 16px;">👨🏻‍💻 GitHub</a></li>
+            </ul>
+        </section>
+</div> 
+    </main>
+    <footer>
+        <p class="footer">&copy; 2024 M.Vighneshwara Reddy</p>
+    </footer>
+    <script>
+        const homeButton = document.querySelector('.home-button');
+        const aboutButton = document.querySelector('.about-button');
+        const projectsButton = document.querySelector('.projects-button');
+        const contactButton = document.querySelector('.contact-button');
+        const aboutSection = document.querySelector('.about');
+        const projectsSection = document.querySelector('.projects');
+        const contactSection = document.querySelector('.contact');
+        const heroSection = document.querySelector('.hero');
+        const name = document.querySelector('.name');
+name.classList.remove('hidden');
+        homeButton.addEventListener('click', () => {
+            heroSection.classList.remove('hidden'); 
+            aboutSection.classList.add('hidden');
+            projectsSection.classList.add('hidden');
+            contactSection.classList.add('hidden');
+            name.classList.remove('hidden');
+        });
+
+        aboutButton.addEventListener('click', () => {
+            heroSection.classList.add('hidden');
+            aboutSection.classList.remove('hidden');
+            projectsSection.classList.add('hidden');
+            contactSection.classList.add('hidden');
+            name.classList.add('hidden');
+        });
+
+        projectsButton.addEventListener('click', () => {
+            heroSection.classList.add('hidden');    
+            aboutSection.classList.add('hidden');
+            projectsSection.classList.remove('hidden');
+            contactSection.classList.add('hidden');
+            name.classList.add('hidden');
+        });
+
+        contactButton.addEventListener('click', () => {
+            heroSection.classList.add('hidden');
+            aboutSection.classList.add('hidden');
+            projectsSection.classList.add('hidden');
+            contactSection.classList.remove('hidden');
+            name.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
