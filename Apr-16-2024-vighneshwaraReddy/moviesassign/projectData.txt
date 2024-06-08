@@ -1,0 +1,10 @@
+
+1. Add data - implemented
+2. View data - implemented 
+3. Edit data - implemented
+4. Delete data - implemented
+5. Local Storage - implemented
+6. Able to view all the data added after page reloaded - implemented and working fine.
+7. Have you hardcoded any value? - No (except the sample data in movie object).
+8. Is validation handled? Yes
+9. Remarks: - none

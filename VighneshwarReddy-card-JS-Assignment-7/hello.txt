@@ -1,0 +1,219 @@
+function Node (data) {
+this.data = data;
+this.next = null;
+
+}
+
+}
+
+function Bag () {
+this.head = null;
+this.size = 0;
+
+// Add an item to the bag
+this.add = function (item) {
+const newNode = new Node (item) ;
+if (!this.head) {
+this.head = newNode;
+} else {
+let current = this.head;
+while (current.next) {
+current = current.next;
+
+current.next = newNode;
+
+this.size++;
+
+// Remove an item from the bag (if it exists)
+this.remove = function (item) {
+if (!this.head) {
+return false; // Bag is empty
+
+if (this.head.data === item) {
+this.head = this.head.next;
+this.size --;
+return true;
+
+let current = this.head;
+let prev = null;
+while (current && current.data !== item) {
+prev = current;
+current = current. next;
+
+if (!current) {
+return false; // Item not found
+
+prev.next = current. next;
+this.size --;
+return true;
+// Search for an item based on its position in the bag
+this. searchByPosition = function (position) {
+if (position < 0 || position >= this.size) {
+return null; // Invalid position
+
+let current = this.head;
+let index = 0;
+while (current) {
+if (index === position) {
+return current. data;
+
+current = current.next;
+index++;
+
+return null; // Item not found
+
+}
+
+// Search for an item based on its data
+this.searchByData = function (data) {
+let current = this.head;
+while (current) {
+if (current.data === data) {
+return true;
+
+current = current.next;
+
+return false; // Item not found
+
+}
+
+// Check if the bag contains the given item
+this.contains = function (item) {
+let current = this.head;
+while (current) {
+if (current.data === item) {
+return true;
+
+current = current. next;
+
+return false;
+
+// Return the number of items in the bag
+this.getSize = function () {
+return this.size;
+
+// Count occurrences of an item in the bag
+this.countOccurrences = function (item) {
+let count = 0;
+let current = this.head;
+while (current) {
+if (current.data === item) {
+count++;
+
+current = current. next;
+
+return count;
+
+}
+
+}
+
+// Grab an item from the bag using a random index
+this.grab = function () {
+if (this.size === 0) {
+return null; // Bag is empty
+}
+const randomIndex = Math.floor (Math. random() * this.size) ;
+return this. searchByPosition (randomIndex) ;
+
+// Remove an item from the bag (if it exists)
+this.remove = function (item) {
+if (!this.head) {
+return false; // Bag is empty
+}
+if (this.head.data === item) {
+this.head = this.head.next;
+this.size --;
+return true;
+}
+let current = this.head;
+let prev = null;
+while (current && current.data !== item) {
+prev = current;
+current = current.next;
+}
+
+return false; // Item not found
+}
+prev.next = current.next;
+this.size --;
+return true;
+
+if (!current) {
+
+// Remove the head node and copy its data to the node with the given value
+this. removeAndCopyHead = function (value) {
+if (!this.head) {
+return null; // Bag is empty
+
+}
+}
+
+let current = this.head;
+while (current) {
+if (current.data === value) {
+current.data = this.head.data;
+this.head = this.head.next;
+this.size --;
+return value;
+
+current = current. next;
+
+}
+
+return null; // Value not found
+
+// Print all items in the bag
+this.print = function () {
+let current = this.head;
+while (current) {
+console. log (current.data);
+current = current.next;
+
+}
+
+}
+
+// Example usage:
+let bag = new Bag ();
+bag.add (1) ;
+bag. add (2) ;
+bag.add (3);
+bag.add (2) ;
+
+console. log ("Bag contents:") ;
+bag.print (); // Output: 1 2 3 2
+
+console.log("Bag size:", bag.getSize()); // Output: 4
+
+console.log ("Removing item 2");
+bag. remove (2) ;
+console. log ("Bag contents after removal:") ;
+bag.print (); // Output: 1 3 2
+
+console.log("Bag size after removal:", bag.getSize ()) ; // Output: 3
+
+console. log("Does bag contain 2?", bag.contains (2) ) ; // Output: true
+
+bag.print ();
+
+console.log("Searching for item at position 2:", bag.searchByPosition(2) ); // Output: 2
+
+console.log ("Searching for item with data 2:", bag.searchByData (2) ) ; // Output: true
+console. log("Count of occurrences of '2':", bag. countOccurrences (2)) ; // Output: 1
+
+console.log("Grabbing a random item from the bag:", bag.grab()); // Output: Random item from the bag
+
+bag = new Bag () ;
+bag.add (1) ;
+bag. add (2) ;
+bag. add (3) ;
+
+console. log ("Before:");
+bag.print (); // Output: 1 2 3
+
+const removedValue = bag. removeAndCopyHead (3) ;
+console. log ("Removed value:", removedValue) ; // Output: 3
+
+console. log ("After:") ;
+bag.print (); // Output: 2 1
