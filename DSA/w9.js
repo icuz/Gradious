@@ -23,11 +23,11 @@ function largestValue(root) {
     return result;
 }
 function getHeight(root) {
-    if (root.index >= root.array.length || root.array[root.index] === null) {
-        return 0;
-    } else {
-        let leftHeight = getHeight({index: 2 * root.index + 1, array: root.array});
-        let rightHeight = getHeight({index: 2 * root.index + 2, array: root.array});
+    if (root==null) return -1;
+    else if (root.left == null && root.right==null) return 0;
+    else {
+        let leftHeight = getHeight(root.left);
+        let rightHeight = getHeight(root.right);
         return 1 + Math.max(leftHeight, rightHeight);
     }
 }
@@ -63,4 +63,4 @@ let root = arrayToBinaryTree(data);
 let height = getHeight({index: 0, array: data});
 
 // Print the height
-console.log(`The height of the binary tree is ${height}`);
+console.log(`The height of the binary tree is ${height}`); //height = 4

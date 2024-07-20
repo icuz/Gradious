@@ -1,0 +1,6 @@
+Name|Age|Gender|City
+Rahul Sharma|18|Male|hyderabad
+Priya Patel|17|Female|delhi
+Rajesh Kumar|19|Male|pune
+Anjali Singh|16|Female|mysore
+Vikram Verma|18|Male|banglore

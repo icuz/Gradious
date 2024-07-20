@@ -44,3 +44,4 @@ solutions.forEach(solution => {
   solution.forEach(row => console.log(row));
   console.log();
 });
+
