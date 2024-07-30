@@ -10,7 +10,6 @@ function minCoins (coins, amount) {
         if(amount === 0)break;
     }
     return amount>0 ? -1:coinCount;
-
 }
 (function () {
 console.log(minCoins (eval (process.argv[2]), parseInt(process.argv[3])));

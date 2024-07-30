@@ -19,7 +19,7 @@ function findAllPaths(matrix) {
   
     search(0, 0, '');
     return paths.sort();
-  }
+}
   
   // Please don't modify the below code
   (function () {

@@ -1,0 +1,37 @@
+[
+	{
+		"userId": "USR00001",
+		"name": "Harry Porter",
+		"profilePicture": "https://imgs.search.brave.com/Wi82NjW8Kl23dNEKnfdXxr34F3Vr8WLBx8yohrszXGE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vdGh1bWIv/ZC9kNy9IYXJyeV9Q/b3R0ZXJfY2hhcmFj/dGVyX3Bvc3Rlci5q/cGcvNTEycHgtSGFy/cnlfUG90dGVyX2No/YXJhY3Rlcl9wb3N0/ZXIuanBn",
+		"statusMessage": "Expelliarmus",
+		"presence": "one"
+	},
+	{
+		"userId": "USR00002",
+		"name": "Ron Weasley",
+		"profilePicture": "https://imgs.search.brave.com/CnOSC4rFM6kxUa90mwIJrCD_8YbdDwG48jPR3TdiFPE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vdGh1bWIv/NS81ZS9Sb25fV2Vh/c2xleV9wb3N0ZXIu/anBnLzUxMnB4LVJv/bl9XZWFzbGV5X3Bv/c3Rlci5qcGc",
+		"statusMessage": "Expecto Patronum",
+		"presence": "two"
+	},
+	{
+		"userId": "USR00003",
+		"name": "Hermione Granger",
+		"profilePicture": "https://imgs.search.brave.com/lDmSsXVrR2GmQv7-PJbYxmWnW8aKwZ7HteQiYQwyhEw/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vdGh1bWIv/ZC9kMy9IZXJtaW9u/ZV9HcmFuZ2VyX3Bv/c3Rlci5qcGcvNTEy/cHgtSGVybWlvbmVf/R3Jhbmdlcl9wb3N0/ZXIuanBn",
+		"statusMessage": "Wingardium Leviosa",
+		"presence": "three"
+	},
+	{
+		"userId": "USR00004",
+		"name": "He Who Must Not Be Named",
+		"profilePicture": "https://imgs.search.brave.com/cp_Zz0Svjtab_Ei7BAlqs12sRL4vnSp5Eq9xh6D6geE/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vdGh1bWIv/YS9hMy9Mb3Jkdm9s/ZGVtb3J0LmpwZy81/MTJweC1Mb3Jkdm9s/ZGVtb3J0LmpwZw",
+		"statusMessage": "Avada Kedavra",
+		"presence": "one"
+	},
+	{
+		"userId": "USR00005",
+		"name": "Albus Dumbledore",
+		"profilePicture": "https://imgs.search.brave.com/xQzyTAgVhEVw0kPX-6et6W_cRYVcu8VclIjOJXVaWT0/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vdGh1bWIv/ZS9lOC9EdW1ibGVk/b3JlXy1fUHJpc29u/ZXJfb2ZfQXprYWJh/bi5qcGcvNTEycHgt/RHVtYmxlZG9yZV8t/X1ByaXNvbmVyX29m/X0F6a2FiYW4uanBn",
+		"statusMessage": "50 points to gryffindor",
+		"presence": "four"
+	}
+]

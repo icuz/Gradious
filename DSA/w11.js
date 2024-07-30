@@ -12,7 +12,6 @@ function maxActivities(activities) {
             count++; // Increase the count of selected activities
         }
     }
-
     return count;
 }
 const activities =  [[1, 4], [3, 5], [0, 6], [5, 7], [8, 9]];

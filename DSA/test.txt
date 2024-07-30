@@ -1,0 +1,182 @@
+//a function that finds contiguous subarray with the largest sum and return sum
+function maxSubarray(nums) {
+  let maxSum = nums[0];
+  let currentSum = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+    currentSum = Math.max(nums[i], currentSum + nums[i]);
+    maxSum = Math.max(maxSum, currentSum);
+  }
+  return maxSum;
+}
+
+//function to find length of longest common subsequence
+function longestCommonSubsequence(str1,str2){
+    let m = str1.length;
+    let n = str2.length;
+    let dp = new Array(m+1).fill(0).map(()=>new Array(n+1).fill(0));
+    for(let i=1;i<=m;i++){
+        for(let j=1;j<=n;j++){
+            if(str1[i-1] === str2[j-1]){
+                dp[i][j] = 1+dp[i-1][j-1];
+            }else{
+                dp[i][j] = Math.max(dp[i-1][j],dp[i][j-1]);
+            }
+        }
+    }
+    return dp[m][n];
+    
+}
+function longestIncreasingSubsequence(nums) {
+    let n = nums.length;
+    let dp = new Array(n).fill(1);
+    for (let i = 1; i < n; i++) {
+        for (let j = 0; j < i; j++) {
+            if (nums[i] > nums[j]) {
+                dp[i] = Math.max(dp[i], dp[j] + 1);
+            }
+        }
+    }
+    return Math.max(...dp);
+}
+function longestIncreasingSubarray(nums) {
+    let maxLen = 1;
+    let currentLen = 1;
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] > nums[i - 1]) {d
+            currentLen++;
+            maxLen = Math.max(maxLen, currentLen);
+        } else {
+            currentLen = 1;
+        }
+    }
+    return maxLen;
+}
+
+----------------------------------------------------
+function findAllPaths(matrix) {
+    let N = matrix.length;
+    let paths = [];
+    let visited = Array(N).fill().map(() => Array(N).fill(false));
+    function search(i, j, path) {
+        if (i < 0 || i >= N || j < 0 || j >= N || matrix[i][j] === 0 || visited[i][j]) {
+            return;
+        }
+        if (i === N - 1 && j === N - 1) {
+            paths.push(path);
+            return;
+        }
+        visited[i][j] = true;
+        search(i - 1, j, path + 'U');
+        search(i + 1, j, path + 'D');
+        search(i, j - 1, path + 'L');
+        search(i, j + 1, path + 'R');
+
+        visited[i][j] = false;
+    }
+    search(0, 0, '');
+    return paths.sort();
+}
+----------------------------------------------------
+function minCoins (coins, amount) {
+    coins.sort((a, b)=> b-a);
+    let coinCount = 0;
+    if(amount<0)return -1;
+    for(let i=0;i<coins.length;i++){           
+        while (amount >= coins[i]){
+            amount -= coins[i];
+            coinCount++;
+        }
+        if(amount === 0)break;
+    }
+    return amount>0 ? -1:coinCount;
+}
+----------------------------------------------------
+function maxActivities(activities) {
+    activities.sort((a, b) => a[1] - b[1]);
+
+    let lastEndTime = -1;
+    let count = 0;
+
+    for (let i = 0; i < activities.length; i++) {
+        if (activities[i][0] >= lastEndTime) {
+            lastEndTime = activities[i][1]; 
+            count++;
+        }
+    }
+    return count;
+}
+----------------------------------------------------
+function solveNQueens(n) {
+  const results = [];
+
+  function isSafe(board, row, col) {
+    for (let i = 0; i < col; i++) {
+      if (board[row][i] === 'Q') return false;
+    }
+    for (let i = row, j = col; i >= 0 && j >= 0; i--, j--) {
+      if (board[i][j] === 'Q') return false;
+    }
+    for (let i = row, j = col; i < n && j >= 0; i++, j--) {
+      if (board[i][j] === 'Q') return false;
+    }
+
+    return true;
+  }
+
+  function solve(board, col) {
+    if (col >= n) {
+      results.push(board.map(row => row.join('')));
+      return true;
+    }
+
+    let res = false;
+    for (let i = 0; i < n; i++) {
+      if (isSafe(board, i, col)) {
+        board[i][col] = 'Q';
+        res = solve(board, col + 1) || res;
+        board[i][col] = '.'; // Backtrack: Remove queen if no solution found
+      }
+    }
+    return res;
+  }
+
+  const board = Array.from({ length: n }, () => Array(n).fill('.'));
+  solve(board, 0);
+  results
+  return results;
+}
+----------------------------------------------------------------------3
+var solveSudoku = function(board) {
+    for(let i=0; i<board.length ; i++){
+        for(let j=0; j<board[0].length; j++){
+            if(board[i][j] === '.'){
+                for(let k=1; k<=9 ; k++){
+                    const num = k.toString()
+                    if(isNumValid(i,j,num,board)){
+                        board[i][j] = num
+                        if(solveSudoku(board) === true){
+                            return true
+                        }else{
+                            board[i][j] = '.'
+                        }
+                    }
+                }
+                return false
+            }
+        }
+    }
+    return true
+};
+function isNumValid(row, col, num, board){
+    for(let i=0 ; i<9 ; i++){        
+        if(board[row][i] === num) return false        
+        if(board[i][col] === num) return false
+        const currentMatrixRow = Math.floor(row/3)        
+        const currentMatrixCol = Math.floor(col/3)
+        const currentRow =  3 * currentMatrixRow + Math.floor(i/3)        
+        const currentCol = 3 * currentMatrixCol + i%3 
+        if(board[currentRow][currentCol] === num ) return false
+    }
+    return true
+}
+
