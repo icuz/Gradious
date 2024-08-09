@@ -1,0 +1,36 @@
+#drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+}
+#drop-area.highlight {
+    border-color: purple;
+}
+#file-button {
+    margin-top: 0px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: lightblue;
+    border: 2px solid transparent;
+    border-radius: 10px;
+}
+#instruction {
+    color: purple;
+}
+#uploaded-files {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}

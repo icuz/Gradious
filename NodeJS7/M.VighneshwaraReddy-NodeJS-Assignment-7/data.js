@@ -16,7 +16,7 @@ const getWeekNumber = (date) => {
     }
     const oneJan = new Date(d.getFullYear(), 0, 1);
     const weekNumber =  Math.ceil((((d - oneJan) / 86400000) + oneJan.getDay() + 1) / 7);
-     return weekNumber.toString().padStart(2, '0');
+     return `${year}-${weekNumber.toString().padStart(2, '0')}`;
 };
 
 // Read and parse JSON files
@@ -43,7 +43,7 @@ const retailWeeklyChange = Object.keys(retailWeeklySales).sort().map((week, inde
   const prevWeek = weeks[index - 1];
   const change = ((retailWeeklySales[week] - retailWeeklySales[prevWeek]) / retailWeeklySales[prevWeek]) * 100;
   const formattedChange = `${change >= 0 ? '+' : ''}${change.toFixed(1)}%`;
-  return { [`week${prevWeek}_to_week${week}`]: formattedChange };
+  return { [`week-${prevWeek}_to_week-${week}`]: formattedChange };
 }).filter(change => change !== null);
 
 // 3. List the unique customer and address along with the total order value
@@ -76,7 +76,7 @@ const weeklyChange = Object.keys(weeklySales).sort().map((week, index, weeks) =>
   const prevWeek = weeks[index - 1];
   const change = ((weeklySales[week] - weeklySales[prevWeek]) / weeklySales[prevWeek]) * 100;
   const formattedChange = `${change >= 0 ? '+' : ''}${change.toFixed(1)}%`;
-  return { [`week${prevWeek}_to_week${week}`]: formattedChange };
+  return { [`week-${prevWeek}_to_week-${week}`]: formattedChange };
 }).filter(change => change !== null);
 
 // 5. Week-wise Sales based on Customer type
