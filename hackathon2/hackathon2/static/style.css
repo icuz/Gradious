@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+h1 {
+    text-align: center;
+}
+#billForm, #bills {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+#billForm {
+    max-width: 400px;
+    width: 100%;
+}
+
+#billForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#billForm input, #billForm select, #billForm button {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#billForm select {
+    width: 100%;
+}
+
+#billForm button{
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#billForm button:hover {
+    background-color: #218838;
+}
+
+#bills {
+    max-width: 600px;
+    width: 100%;
+}
+
+#bills div {
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+#bills p {
+    margin: 0;
+}
+
+#bills button,#fetchButton{
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+#bills button:hover {
+    background-color: #c82333;
+}
+#fetchButton:hover {
+    background-color: #c82333;
+}
+#claimDetails {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    resize: vertical; 
+    box-sizing: border-box;
+}
+::placeholder{
+    color: #ccc;
+    font-style: italic;
+}

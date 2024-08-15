@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+h1 {
+    text-align: center;
+}
+#bookingForm, #bookings {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+#bookingForm {
+    max-width: 400px;
+    width: 100%;
+}
+
+#bookingForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#bookingForm input, #bookingForm select, #bookingForm button {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#bookingForm select {
+    width: 100%;
+}
+
+#bookingForm button {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#bookingForm button:hover {
+    background-color: #218838;
+}
+
+#bookings {
+    max-width: 600px;
+    width: 100%;
+}
+
+#bookings div {
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+#bookings p {
+    margin: 0;
+}
+
+#bookings button, #fetchButton {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+#bookings button:hover, #fetchButton:hover {
+    background-color: #c82333;
+}
+
+::placeholder {
+    color: #ccc;
+    font-style: italic;
+}
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+.button-container button {
+    flex: 1;
+}
+hr {
+    width: 100%;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    
+}

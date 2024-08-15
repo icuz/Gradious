@@ -1,4 +1,4 @@
-onst fs = require('fs');
+const fs = require('fs');
 const pathModule = require('path');
 
 function getFileContent(fileName){
