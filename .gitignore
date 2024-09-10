@@ -1,4 +1,6 @@
 node_modules/
+zip/
+zpresentationVideos/
 *.zip 
 *.pptx
 *.mp4
