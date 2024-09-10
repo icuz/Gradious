@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "imageUrl": "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Jeffrey Abrams",
+      "age": 51,
+      "location": "New York, United States",
+      "description": "American film director, producer, and screenwriter.",
+      "skills": ["Directing", "Producing", "Writing"],
+      "isOnline": true
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Jane Doe",
+      "age": 28,
+      "location": "Los Angeles, United States",
+      "description": "Digital artist and graphic designer.",
+      "skills": ["Graphic Design", "3D Modeling", "Animation"],
+      "lastSeenDate": "2024-09-02T08:00:00"
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://images.pexels.com/photos/428364/pexels-photo-428364.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "John Smith",
+      "age": 34,
+      "location": "London, UK",
+      "description": "Web developer and tech enthusiast.",
+      "skills": ["JavaScript", "React", "Node.js"],
+      "lastSeenDate": "2024-09-07T14:00:00"
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Emily Clarke",
+      "age": 29,
+      "location": "Sydney, Australia",
+      "description": "Marketing strategist and content creator.",
+      "skills": ["SEO", "Content Writing", "Digital Marketing"],
+      "lastSeenDate": "2024-08-25T10:00:00"
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://images.pexels.com/photos/6834039/pexels-photo-6834039.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Michael Chang",
+      "age": 38,
+      "location": "Tokyo, Japan",
+      "description": "Software engineer specializing in AI.",
+      "skills": ["Python", "Machine Learning", "AI"],
+      "isOnline": true
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Sophie Turner",
+      "age": 33,
+      "location": "Paris, France",
+      "description": "Fashion designer and creative director.",
+      "skills": ["Fashion Design", "Creative Direction", "Photography"],
+      "lastSeenDate": "2024-09-01T12:00:00"
+    }
+  ]
+  
