@@ -1,2 +1,4 @@
 node_modules/
-*.zip, *.pptx, *.mp4 // Add your file extensions here
+*.zip 
+*.pptx
+*.mp4
