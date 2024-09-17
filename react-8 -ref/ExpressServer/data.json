@@ -1,0 +1,35 @@
+{
+  "subscriptions": [
+    {
+      "name": "Madhu",
+      "email": "Madhu@gradious.com",
+      "role": "CXO",
+      "frequency": "daily",
+      "termAgrement": false
+    },
+    {
+      "name": "children",
+      "email": "viggi1614@gmail.com",
+      "role": "Engineer",
+      "frequency": "daily",
+      "termAgreement": true,
+      "comment": "None"
+    },
+    {
+      "name": "icuz",
+      "email": "viggi1614@gmail.co",
+      "role": "Engineer",
+      "frequency": "weekly",
+      "termAgreement": true,
+      "comment": "nlsfdndsn"
+    },
+    {
+      "name": "Harry Porter",
+      "email": "vikrposr@gmail.com",
+      "role": "Manager",
+      "frequency": "daily",
+      "termAgreement": true,
+      "comment": "Madhu@gradious.com"
+    }
+  ]
+}

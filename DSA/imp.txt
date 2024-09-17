@@ -1,0 +1,367 @@
+class Stack {
+    constructor() {
+      this.items = [];
+    }
+  
+    // Push
+    push(element) {
+      this.items.push(element);
+    }
+  
+    // Pop
+    pop() {
+      if (this.isEmpty()) {
+        return "Underflow";
+      }
+      return this.items.pop();
+    }
+  
+    // Peek
+    peek() {
+      return this.items[this.items.length - 1];
+    }
+  
+    // Check if the stack is empty
+    isEmpty() {
+      return this.items.length === 0;
+    }
+  
+    // Get the size of the stack
+    size() {
+      return this.items.length;
+    }
+  
+    // Clear the stack
+    clear() {
+      this.items = [];
+    }
+  
+    // Print the stack elements
+    printStack() {
+      let str = "";
+      for (let i = 0; i < this.items.length; i++) {
+        str += this.items[i] + " ";
+      }
+      return str.trim(); // Remove trailing space
+    }
+  
+    // Check if parentheses, braces, and brackets are balanced
+    isBalanced(expression) {
+      const openingSymbols = "([{";
+      const closingSymbols = ")]}";
+      const stack = new Stack();
+  
+      for (let i = 0; i < expression.length; i++) {
+        let char = expression[i];
+        if (openingSymbols.includes(char)) {
+          stack.push(char);
+        } else if (closingSymbols.includes(char)) {
+          if (stack.isEmpty()) {
+            return false;
+          }
+          let top = stack.pop();
+          if (closingSymbols.indexOf(char) !== openingSymbols.indexOf(top)) {
+            return false; // Mismatched symbols
+          }
+        }
+      }
+  
+      return stack.isEmpty(); // All symbols matched if stack is empty
+    }
+    // Convert an infix expression to postfix using a stack
+    convertInfixToPostfix(expression) {
+      const operators = "+-*/";
+      const precedence = { "+": 1, "-": 1, "*": 2, "/": 2 };
+      const stack = new Stack();
+      let postfix = "";
+
+      for (let char of expression) {
+        if (char === "(") {
+          stack.push(char);
+        } else if (char === ")") {
+          while (stack.peek() !== "(") {
+            postfix += stack.pop();
+          }
+          stack.pop(); // Remove the "("
+        } else if (operators.includes(char)) {
+          while (!stack.isEmpty() && precedence[char] <= precedence[stack.peek()]) {
+            postfix += stack.pop();
+          }
+          stack.push(char);
+        } else {
+          postfix += char;
+        }
+      }
+
+      while (!stack.isEmpty()) {
+        postfix += stack.pop();
+      }
+
+      return postfix;
+    }
+}
+
+function groupAnagrams(strs){
+  const map=new Map();
+  for (const str of strs){
+    const key=str.split("").sort().join("");
+    if(map.has(key)){
+      map.get(key).push(str);
+    }else{
+      map.set(key,[str]);
+    }
+  }
+  return Array.from(map.values());
+}
+
+function findMaxLength(arr) {
+  const countMap={ 0: -1 }; 
+  let maxLength=0;
+  let currentSum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    currentSum += arr[i] === 1?1:-1;
+
+    if (countMap.hasOwnProperty(currentSum)) {
+      maxLength =Math.max(maxLength,i - countMap[currentSum]);
+    } else {
+      countMap[currentSum] = i;
+    }
+  }
+
+  return maxLength;
+}
+
+function lengthOfLongestSubstring(s) {
+  let longest = 0;
+  let start = 0;
+  const seen = {}; 
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+    if (seen[char] !== undefined && seen[char] >= start) {
+      start = Math.max(start, seen[char] + 1);
+    }
+
+    seen[char] = i;
+
+    longest = Math.max(longest, i - start + 1);
+  }
+
+  return longest;
+}
+
+function subarraySum(nums, k) {
+  const countMap = {0:1}; 
+  let subarrayCount = 0;
+  let currentSum = 0;
+
+  for (const num of nums) {
+    currentSum += num;
+
+    if (countMap.hasOwnProperty(currentSum-k)) {
+      subarrayCount += countMap[currentSum-k];
+    }
+
+    countMap[currentSum] = (countMap[currentSum] || 0)+1;
+  }
+
+  return subarrayCount;
+}
+
+function groupStrings(strings) {
+  const groups = {};
+
+  for (const str of strings) {
+    const shift = (str.charCodeAt(0) - "a"+26) % 26;
+    const key = str.split("").map((char) =>
+        String.fromCharCode(((char.charCodeAt(0) - "a"+shift) % 26)+"a")
+      ).join("");
+
+    if (!groups[key]) {
+      groups[key]=[];
+    }
+    groups[key].push(str);
+  }
+
+  return Object.values(groups);
+}
+
+function fourSumCount(A, B, C, D) {
+  const map = new Map();
+  for (let i = 0; i < A.length; i++) {
+    for (let j = 0; j < B.length; j++) {
+      const sum = A[i] + B[j];
+      map.set(sum, (map.get(sum) || 0) + 1);
+    }
+  }
+
+  let count = 0;
+  for (let k = 0; k < C.length; k++) {
+    for (let l = 0; l < D.length; l++) {
+      const target = -(C[k] + D[l]);
+      if (map.has(target)) {
+        count += map.get(target);
+      }
+    }
+  }
+
+  return count;
+}
+
+function lengthOfLongestSubstringKDistinct(s, k) {
+  let maxLength = 0;
+  let left = 0;
+  const map = new Map();
+
+  for (let right = 0; right < s.length; right++) {
+    const char = s[right];
+    map.set(char, (map.get(char) || 0) + 1);
+
+    while (map.size > k) {
+      const leftChar = s[left];
+      map.set(leftChar, map.get(leftChar) - 1);
+      if (map.get(leftChar) === 0) {
+        map.delete(leftChar);
+      }
+      left++;
+    }
+
+    maxLength = Math.max(maxLength, right - left + 1);
+  }
+
+  return maxLength;
+}
+
+function minWindow(s, t) {
+  let tFreq = {}; 
+  for (let char of t) {
+    tFreq[char] = (tFreq[char] || 0) + 1;
+  }
+
+  let left = 0;
+  let minLen = Infinity;
+  let minWindow = "";
+  let count = 0;
+
+  for (let right = 0; right < s.length; right++) {
+    let char = s[right];
+    if (char in tFreq) {
+      tFreq[char]--;
+      if (tFreq[char] >= 0) {
+        count++;
+      }
+      while (count === t.length) {
+        if (right - left + 1 < minLen) {
+          minLen = right - left + 1;
+          minWindow = s.substring(left, right + 1);
+        }
+        let leftChar = s[left];
+        if (leftChar in tFreq) {
+          tFreq[leftChar]++;
+          if (tFreq[leftChar] > 0) {
+            count--;
+          }
+        }
+        left++;
+      }
+    }
+  }
+  return minWindow;
+}
+
+function topKFrequent(nums, k) {
+    const freqMap = new Map();
+    for (const num of nums) {
+        freqMap.set(num, (freqMap.get(num) || 0) + 1);
+    }
+
+    const sortedNums = [...freqMap.keys()].sort((a, b) => freqMap.get(b) - freqMap.get(a));
+
+    return sortedNums.slice(0, k);
+}
+
+function maximumRobots(chargeTimes, runningCosts, budget) {
+  let n = chargeTimes.length;
+  let maxConsecutive = 0;
+  let sumRunningCosts = 0;
+  let queue = []; // queue to keep track of maximum charging time
+
+  let j = 0; // start of the sliding window
+  for (let i = 0; i < n; i++) {
+    // add the current robot's running cost to the total
+    sumRunningCosts += runningCosts[i];
+
+    while (queue.length && chargeTimes[i] > chargeTimes[queue[queue.length - 1]]) {
+      queue.pop();
+    }
+    if (chargeTimes[i] + sumRunningCosts <= budget) {
+      queue.push(i);
+    }
+
+    // if the total cost exceeds the budget, move the start of the sliding window
+    while (chargeTimes[queue[0]] + (i - j + 1) * sumRunningCosts > budget) {
+      sumRunningCosts -= runningCosts[j];
+      if (queue[0] === j) queue.shift();
+      j++;
+    }
+
+    // update the maximum number of consecutive robots
+    if (chargeTimes[queue[0]] + (i - j + 1) * sumRunningCosts <= budget) {
+      maxConsecutive = Math.max(maxConsecutive, i - j + 1);
+    }
+  }
+
+  return maxConsecutive;
+}
+
+function maxSubarray(nums) {
+  let maxSum = nums[0];
+  let currentSum = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+    currentSum = Math.max(nums[i], currentSum + nums[i]);
+    maxSum = Math.max(maxSum, currentSum);
+  }
+  return maxSum;
+}
+
+function longestCommonSubsequence(str1,str2){
+    let m = str1.length;
+    let n = str2.length;
+    let dp = new Array(m+1).fill(0).map(()=>new Array(n+1).fill(0));
+    for(let i=1;i<=m;i++){
+        for(let j=1;j<=n;j++){
+            if(str1[i-1] === str2[j-1]){
+                dp[i][j] = 1+dp[i-1][j-1];
+            }else{
+                dp[i][j] = Math.max(dp[i-1][j],dp[i][j-1]);
+            }
+        }
+    }
+    return dp[m][n];   
+}
+function longestIncreasingSubsequence(nums) {
+    let n = nums.length;
+    let dp = new Array(n).fill(1);
+    for (let i = 1; i < n; i++) {
+        for (let j = 0; j < i; j++) {
+            if (nums[i] > nums[j]) {
+                dp[i] = Math.max(dp[i], dp[j] + 1);
+            }
+        }
+    }
+    return Math.max(...dp);
+}
+function longestIncreasingSubarray(nums) {
+    let maxLen = 1;
+    let currentLen = 1;
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] > nums[i - 1]) {d
+            currentLen++;
+            maxLen = Math.max(maxLen, currentLen);
+        } else {
+            currentLen = 1;
+        }
+    }
+    return maxLen;
+}
