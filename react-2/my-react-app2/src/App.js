@@ -6,7 +6,6 @@ function App() {
     <div className="App">
     <div className="profile-card">
       <div className="profile-image">
-        {/* Replace with your image URL */}
         <img src="https://imgs.search.brave.com/FlZqWF7uihR5fnp_ZR_1PF72SuaxpsT2r9psa7rCuV4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9teW5l/d21pY3JvcGhvbmUu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDE5LzA3L21ubV9I/b3dfVG9fSG9sZF9B/X01pY3JvcGhvbmVf/V2hlbl9QdWJsaWNf/U3BlYWtpbmdfQW5k/X1ByZXNlbnRpbmdf/bGFyZ2UuanBn" alt="Profile" />
       </div>
       <div className="profile">

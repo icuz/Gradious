@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome</h1>
+    <div class="form-container">
+        <div class="form-box">
+            <h1>Login</h1>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div class="form-box">
+            <h1>Register</h1>
+            <form id="registerForm">
+                <label for="regUsername">Username:</label>
+                <input type="text" id="regUsername" name="username" required>
+                <br>
+                <label for="regPassword">Password:</label>
+                <input type="password" id="regPassword" name="password" required>
+                <br>
+                <div class="admin-check">
+                    <label for="isAdmin">Make Admin?</label>
+                    <input type="checkbox" id="isAdmin" name="isAdmin">
+                </div>
+                <h5><span id="asterisk">*</span>Check above box if you want to create an admin account</h5>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="loginScript.js"></script> <!-- Include the external JavaScript file -->
+</body>
+</html>

@@ -1,0 +1,53 @@
+[
+    {
+        "userId": 1,
+        "name": "John Doe",
+        "age": "30",
+        "salary": "50000",
+        "status": "🟢active",
+        "location": "New York",
+        "img": "https://randomuser.me/api/portraits/women/67.jpg",
+        "detailImage": "https://randomuser.me/api/portraits/women/67.jpg"
+    },
+    {
+        "userId": 2,
+        "name": "Jane Smith",
+        "age": "25",
+        "salary": "60000",
+        "status": "🔴inactive",
+        "location": "Los Angeles",
+        "img": "https://randomuser.me/api/portraits/women/63.jpg",
+        "detailImage": "https://randomuser.me/api/portraits/women/63.jpg"
+    },
+    {
+        "userId": 3,
+        "name": "Tom Brown",
+        "age": "35",
+        "salary": "70000",
+        "status": "🟢active",
+        "location": "Chicago",
+        "img": "https://randomuser.me/api/portraits/women/61.jpg",
+        "detailImage": "https://randomuser.me/api/portraits/women/61.jpg"
+    },
+    {
+        "userId": 4,
+        "name": "Alice Green",
+        "age": "40",
+        "salary": "80000",
+        "status": "🔴inactive",
+        "location": "Houston",
+        "img": "https://randomuser.me/api/portraits/women/54.jpg",
+        "detailImage": "https://randomuser.me/api/portraits/women/54.jpg"
+    },
+    {
+        "userId": 5,
+        "name": "Bob White",
+        "age": "45",
+        "salary": "90000",
+        "status": "🟢active",
+        "location": "Philadelphia",
+        "img": "https://randomuser.me/api/portraits/women/27.jpg",
+        "detailImage": "https://randomuser.me/api/portraits/women/27.jpg"
+    }
+
+]

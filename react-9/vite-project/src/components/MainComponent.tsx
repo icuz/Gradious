@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/img/prof.png';
+import image from '../assets/img/user1.jpg';
 import { IconButton, Menu, MenuItem } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 

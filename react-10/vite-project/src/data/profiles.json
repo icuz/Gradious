@@ -1,0 +1,22 @@
+    [
+    {
+            "userId": 1,
+            "name": "John Doe",
+            "age": "30",
+            "salary": "50000",
+            "status": "active",
+            "location": "New York",
+            "img": "john_doe.jpg",
+            "detailImage": "john_doe_detail.jpg"
+        },
+        {
+            "userId": 2,
+            "name": "Jane Smith",
+            "age": "25",
+            "salary": "60000",
+            "status": "inactive",
+            "location": "Los Angeles",
+            "img": "jane_smith.jpg",
+            "detailImage": "jane_smith_detail.jpg"
+        }
+    ]

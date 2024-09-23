@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Welcome Admin</h1>
+    
+    <!-- Admin Stats Section -->
+    <div class="stats-container">
+        <div class="stat-box">
+            <h2 id="totalUsers">0</h2>
+            <p>Total Users</p>
+        </div>
+        <div class="stat-box">
+            <h2 id="totalBookings">0</h2>
+            <p>Total Bookings (excluding failed bookings)</p>
+        </div>
+        <div class="stat-box">
+            <h2 id="pendingRequests">0</h2>
+            <p>Pending Requests</p>
+        </div>
+        <div class="stat-box">
+            <h2 id="confirmedRequests">0</h2>
+            <p>Confirmed Requests</p>
+        </div>
+    </div>
+
+    <!-- User Management Section -->
+    <form id="userForm">
+        <h1>User Management</h1>
+        <input type="hidden" id="userId">
+        <input type="text" id="userName" placeholder="User Name" required>
+        <input type="password" id="password" placeholder="password" required>
+        <select id="role" required>
+            <option value="" disabled selected>Select Role</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+        </select>
+        <button type="submit">Save User</button>
+        <button type="button" onclick="deleteUser()">Delete User</button>
+        <button type="button" onclick="resetUserForm()">Reset</button>
+    </form>
+
+    <!-- Users List Section -->
+    <div id="usersList"></div>
+    <div id="adminLogs">
+        <h2>Admin Logs</h2>
+        <pre id="adminLogsContent"></pre>
+    </div>
+    <script src="adminScript.js"></script>
+</body>
+
+</html>
